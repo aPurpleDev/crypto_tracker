@@ -1,5 +1,5 @@
-import  { v4 as uuidv4 } from 'uuid';
 import {BTC, ETH} from './types.js'
+import  {v4 as uuidv4} from 'uuid';
 
 export default class Crypto {
     constructor({id, name, ticker}) {
@@ -8,6 +8,7 @@ export default class Crypto {
             this.name = name;
             this.ticker = ticker;
             this.uuid = uuidv4();
+            //does not accept instantiation of unknown cryptos
         } else {
             return console.error('Invalid Crypto : unknown')
         }

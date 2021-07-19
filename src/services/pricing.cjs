@@ -1,5 +1,6 @@
 const rp = require('request-promise');
 
+//API request object
 const requestOptions = (apiKey) => {
     return {
         method: 'GET',
@@ -18,9 +19,10 @@ const requestOptions = (apiKey) => {
 };
 
 const fetchPrice = async (apiKey, crypto, isManual = false, definedPrice = null) => {
+    //defines prices manually for test suite
     if(isManual){
-        definedPrice !== null ? definedPrice = parseInt(definedPrice) : definedPrice = Math.random()
-        console.log(`Defining manual price for ${crypto.ticker} : ${definedPrice}`);
+        definedPrice !== null ? definedPrice = parseFloat(definedPrice) : definedPrice = Math.random();
+        return definedPrice;
     }
     else if (apiKey && crypto && !isManual){
 

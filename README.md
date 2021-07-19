@@ -6,6 +6,7 @@ value depending on the crypto prices
 
 # usage
 
+Add a .env with a valid CryptoMarketCap API key, under the variable API_KEY
 Use 'npm run test' to launch Jest test-suite
 Instantiate cryptos, wallets and use fetchprices and count functionalities at will 
 in main.js
